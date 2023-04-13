@@ -1,0 +1,4 @@
+记录一下项目踩到的坑
+
+在base工程写exception包未被content中的api启动类识别到。
+原因是api启动类比base中的异常包层级深导致未扫描到。

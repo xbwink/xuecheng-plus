@@ -1,0 +1,65 @@
+### 课程查询信息
+POST {{gateway_host}}/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202002",
+  "courseName": ""
+}
+
+### 课程分类查询
+GET {{content_host}}/content/course-category/tree-nodes
+
+### 创建课程
+POST {{content_host}}/content/course
+Content-Type: application/json
+
+{
+"charge": "201001",
+"price": 1,
+"originalPrice":2,
+"qq": "22333",
+"wechat": "223344",
+"phone": "13333333",
+"validDays": 365,
+"mt": "1-1",
+"st": "1-1-1",
+"name": "",
+"pic": "",
+"teachmode": "200002",
+"users": "初级人员",
+"tags": "",
+"grade": "204001",
+"description": "",
+"objectives": ""
+}
+
+### 课程id查询
+GET {{content_host}}/content/course/40
+Content-Type: application/json
+
+### 课程计划树状结构id查询
+GET {{content_host}}/content/teachplan/117/tree-nodes
+
+### 新增课程计划--章
+POST {{content_host}}/content/teachplan
+Content-Type: application/json
+
+{
+  "changeDate" : null,
+  "courseId" : 22,
+  "cousePubId" : null,
+  "createDate" : null,
+  "ctlBarShow" : false,
+  "ctlEditTitle" : true,
+  "endTime" : null,
+  "grade" : "2",
+  "isPreview" : "1",
+  "mediaType" : "",
+  "orderby" : 1,
+  "parentid" : 237,
+  "pname" : "第1节修改名称",
+  "startTime" : null,
+  "status" : null,
+  "teachPlanId" : 240
+}
