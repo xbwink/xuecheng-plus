@@ -65,5 +65,4 @@ public UploadFileResultDto upload(@RequestPart("filedata")MultipartFile filedata
      return uploadFileResultDto;
  }
 
-
 }
