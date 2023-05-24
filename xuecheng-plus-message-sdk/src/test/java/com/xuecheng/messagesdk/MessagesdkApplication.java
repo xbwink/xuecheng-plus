@@ -1,13 +1,12 @@
-package com.xuecheng.content;
+package com.xuecheng.messagesdk;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class XuechengPlusContentServiceApplication {
-
+public class MessagesdkApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(XuechengPlusContentServiceApplication.class, args);
+		SpringApplication.run(MessagesdkApplication.class, args);
 	}
-
 }
