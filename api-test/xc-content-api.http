@@ -1,5 +1,5 @@
 ### 课程查询信息
-POST {{gateway_host}}/content/course/list?pageNo=1&pageSize=2
+POST {{content_host}}/content/course/list?pageNo=1&pageSize=2
 Content-Type: application/json
 
 {
@@ -63,3 +63,7 @@ Content-Type: application/json
   "status" : null,
   "teachPlanId" : 240
 }
+
+###
+GET http://localhost:63010/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJjb21wYW55SWRcIjpcIjEyMzIxNDE0MjVcIixcImNyZWF0ZVRpbWVcIjpcIjIwMjItMDktMjhUMDg6MzI6MDNcIixcImlkXCI6XCI1MlwiLFwibmFtZVwiOlwiTeiAgeW4iFwiLFwic2V4XCI6XCIxXCIsXCJzdGF0dXNcIjpcIlwiLFwidXNlcm5hbWVcIjpcInQxXCIsXCJ1dHlwZVwiOlwiMTAxMDAyXCJ9Iiwic2NvcGUiOlsiYWxsIl0sImV4cCI6MTY4NjY0NDU1NiwiYXV0aG9yaXRpZXMiOlsidGVzdCJdLCJqdGkiOiJmMDhmYjVjNi0wMWRlLTQ3NTEtYTU3NS1mNTI5OWNiOTgwYzQiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.zeyVJQ62K0Cq36sGVtG8cJMROYGPBfW6Xs4o9d8PYVY
