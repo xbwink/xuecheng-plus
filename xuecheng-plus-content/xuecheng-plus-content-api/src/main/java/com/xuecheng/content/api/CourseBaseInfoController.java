@@ -11,7 +11,9 @@ import com.xuecheng.content.service.CourseBaseInfoService;
 import com.xuecheng.content.util.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -30,10 +32,15 @@ public class CourseBaseInfoController {
     private CourseBaseInfoService courseBaseInfoService;
 
     @ApiOperation("课程查询分页接口")
+    @PreAuthorize("hasAuthority('xc_teachmanager_course_list')")
     @PostMapping("/course/list")
     public PageResult<CourseBase> list(PageParams pageParams, @RequestBody
     QueryCourseParamsDto queryCourseParams){
-        PageResult<CourseBase> pageResult = courseBaseInfoService.queryCourseBaseList(queryCourseParams, pageParams);
+        //取出用户身份
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
+        Long companyId = Long.parseLong(user.getCompanyId());
+
+        PageResult<CourseBase> pageResult = courseBaseInfoService.queryCourseBaseList(queryCourseParams, pageParams,companyId);
         return pageResult;
     }
 
@@ -50,8 +57,8 @@ public class CourseBaseInfoController {
     public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId){
         //取出当前用户身份
 //    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        SecurityUtil.XcUser user = SecurityUtil.getUser();
-        System.out.println(user);
+//        SecurityUtil.XcUser user = SecurityUtil.getUser();
+//        System.out.println(user);
         return courseBaseInfoService.getCourseBaseInfo(courseId);
     }
 
